@@ -620,6 +620,7 @@ body.light .logo {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* flex-direction: column; */
 }
 
 @media (max-width: 1045px) {
@@ -721,7 +722,11 @@ body.dark .work-links img {
 }
 
 .work-textbox h3,
-.work-text,
+.work-text {
+  color: white;
+  font-weight: 100;
+  display: block; 
+}
 .work-technologies,
 .work-links {
   --delay: 0.2s;
@@ -1253,3 +1258,187 @@ input:checked {
   --thumb-position: 100%;
   background-color: var(--track-active);
 }
+
+.experience-boxes {
+  padding-block-start: var(--gutter-x-large);
+}
+
+.experience-box {
+  display: block;
+}
+
+.experience-box:not(:last-child) {
+  margin-block-end: var(--gutter-huge);
+}
+
+@media (max-width: 1285px) {
+  .experience-box:not(:last-child) {
+    margin-block-end: 8rem;
+  }
+}
+
+.experience-textbox {
+  max-inline-size: 700px;
+  margin-inline: auto;
+  width: 100%;
+}
+
+.experience-text {
+  margin-block: var(--gutter-micro);
+  font-weight: 300;
+}
+
+.experience-technologies {
+  list-style-position: inside;
+  list-style-type: disc;
+  margin-block-end: var(--gutter-x-small);
+  font-weight: 300;
+}
+
+/* Optional link styles */
+:root {
+  --gutter-x-small: 8px;
+}
+
+/* Experience Links */
+.experience-links {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gutter-x-small);
+}
+
+.experience-links img {
+  block-size: 28px;
+  inline-size: 28px;
+}
+
+body.dark .experience-links img {
+  filter: invert(1);
+}
+
+.experience-links > a:last-child {
+  transition: 0.3s transform ease-in;
+}
+
+.experience-links > a:last-child:hover,
+.experience-links > a:last-child:focus {
+  transform: scale(1.1);
+}
+
+/* Animation */
+.experience-textbox h3,
+.experience-text,
+.experience-technologies,
+.experience-links {
+  --delay: 0.2s;
+  animation: slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.experience-text {
+  animation-delay: var(--delay);
+  transition: color 0.3s ease;
+}
+
+.experience-technologies {
+  animation-delay: calc(var(--delay) * 1.5);
+}
+
+.experience-links {
+  animation-delay: calc(var(--delay) * 2);
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(45px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/* Theme-based styling */
+body.light .experience-text,
+body.light .experience-textbox h3,
+body.light .job-duration,
+body.light .work-text li {
+  color: #222;
+}
+
+body.dark .experience-text,
+body.dark .experience-textbox h3,
+body.dark .job-duration,
+body.dark .work-text li {
+  color: #ddd;
+}
+
+/* Button styling */
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.curved-button {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: none;
+  background-color: #facc15;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.curved-button:hover {
+  background-color: #f0f0f0;
+  text-decoration: none;
+}
+
+body.dark .curved-button {
+  background-color: #333;
+  color: #facc15;
+}
+
+body.dark .curved-button:hover {
+  background-color: #444;
+}
+
+
+/* education */
+
+#education {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.education-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.education-list li {
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+body:not(.dark) .education-list li {
+  background-color: #eaeaea; 
+  color: #111;
+  border: 1px solid #ccc; 
+}
+
+body.dark .education-list li {
+  background-color: #1f2937;
+  color: #f1f5f9;
+  border: 1px solid #334155; 
+}
+
