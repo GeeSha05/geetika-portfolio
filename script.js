@@ -112,3 +112,6 @@ logosWrappers.forEach(async (logoWrapper, i) => {
 });
 
 yearEl.textContent = new Date().getFullYear();
+
+
+
