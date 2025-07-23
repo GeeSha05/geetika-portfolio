@@ -1483,6 +1483,8 @@ body.dark .education-list li {
   flex-shrink: 0;
   border: 1px solid;
   box-shadow: 0 4px 8px;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card:hover {
@@ -1498,11 +1500,14 @@ body.dark .education-list li {
 .project-info {
   padding: 16px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .project-button {
   display: inline-block;
-  margin-top: 12px;
+  margin-top: auto;
   padding: 10px 20px;
   background-color: #facc15;
   color: #000;
