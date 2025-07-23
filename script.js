@@ -114,4 +114,13 @@ logosWrappers.forEach(async (logoWrapper, i) => {
 yearEl.textContent = new Date().getFullYear();
 
 
+// contact input
+const githubLink = document.createElement("a");
+githubLink.href = "https://GeeSha05.github.io/geetika-portfolio/"; 
+githubLink.textContent = "View Live Site";
+githubLink.target = "_blank"; 
+githubLink.style.marginLeft = "1rem"; 
+
+yearEl.parentElement.appendChild(githubLink);
+
 
